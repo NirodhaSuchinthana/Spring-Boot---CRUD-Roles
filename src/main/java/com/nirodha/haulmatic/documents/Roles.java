@@ -14,7 +14,7 @@ public class Roles {
     }
 
     @Id
-    private Integer id;
+    private static Integer id;
     private String organization;
     private String firstName;
     private String lastName;
