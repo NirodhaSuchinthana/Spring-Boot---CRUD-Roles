@@ -52,4 +52,27 @@ public class RolesResource {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<HttpStatus> deleteAllRoles(){
+        try {
+            rolesRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<HttpStatus> deleteRole(@PathVariable("id") String id){
+        Optional<Roles> role = rolesRepository.findById(Integer.valueOf(id));
+
+        try {
+            rolesRepository.deleteById(Integer.valueOf(id));
+            return new ResponseEntity<>(HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+
+    }
 }
