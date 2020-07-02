@@ -63,6 +63,10 @@ The document for Role is as follows.
      
      //and Constructor,getters and setters`
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8b0ab79d63709a3c2055bc8162b528b61390a455
 ![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles/tree/master/src/main/resources/readme_content/swagger-image.png)
+
