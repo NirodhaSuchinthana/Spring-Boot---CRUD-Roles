@@ -41,7 +41,7 @@ The backend server will start at http://localhost:8095.
 
 All the code is organized in to folders for easy convenience.
 
-![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles/tree/master/src/main/resources/readme_content/folder-structure.png)
+![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles.git/tree/master/src/main/resources/readme_content/folder-structure.png)
 
 The document for Role is as follows.
 `public class Roles {
@@ -63,10 +63,5 @@ The document for Role is as follows.
      
      //and Constructor,getters and setters`
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8b0ab79d63709a3c2055bc8162b528b61390a455
-![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles/tree/master/src/main/resources/readme_content/swagger-image.png)
+![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles.git/tree/master/src/main/resources/readme_content/swagger-image.png)
 
