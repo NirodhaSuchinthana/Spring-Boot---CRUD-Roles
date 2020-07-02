@@ -2,10 +2,16 @@ package com.nirodha.haulmatic.resource;
 
 import com.nirodha.haulmatic.documents.Roles;
 import com.nirodha.haulmatic.repository.RolesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.Query;
+import javax.management.relation.Role;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +20,9 @@ import java.util.Optional;
 public class RolesResource {
 
     private RolesRepository rolesRepository;
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 
     public RolesResource(RolesRepository rolesRepository){
         this.rolesRepository = rolesRepository;
@@ -73,6 +82,37 @@ public class RolesResource {
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
+    }
 
+    @DeleteMapping("/deleteByNic")
+    public ResponseEntity<HttpStatus> getRoleByNic(String nic){
+
+        try {
+            rolesRepository.deleteRolesByNicNo(nic,Roles.class);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);
+        }
+    }
+
+    @GetMapping("/get/{organization}")
+    public ResponseEntity<List<Roles>> getRoleByOrganization(@PathVariable("organization") String organization){
+
+        try {
+            List<Roles> result = rolesRepository.findDistinctByOrganization(organization, Roles.class);
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("get/{roleType}")
+    public ResponseEntity<List<Roles>> getRoleByRoleType(@PathVariable("roleType") Roles.RoleType roleType){
+        try {
+            List<Roles> result = rolesRepository.findRolesByRoleType(roleType, Roles.class);
+            return new ResponseEntity<>(result,HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }
