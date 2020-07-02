@@ -3,6 +3,8 @@ package com.nirodha.haulmatic.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document
 public class Roles {
 
@@ -18,6 +20,8 @@ public class Roles {
     private String lastName;
     private String nicNo;
     private RoleType roleType;
+    private Date createdDate;
+    private Date modifiedDate;
 
     public Roles(Integer id, String organization, String firstName, String lastName, String nicNo, RoleType roleType) {
         this.id = id;
@@ -26,6 +30,8 @@ public class Roles {
         this.lastName = lastName;
         this.nicNo = nicNo;
         this.roleType = roleType;
+        this.createdDate = new Date();
+        this.modifiedDate = null;
     }
 
     public Integer getId() {
@@ -74,6 +80,22 @@ public class Roles {
 
     public void setRoleType(RoleType roleType) {
         this.roleType = roleType;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
 }

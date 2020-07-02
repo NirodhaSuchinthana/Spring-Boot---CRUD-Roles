@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import java.util.Date;
+
 @EnableMongoRepositories(basePackageClasses = RolesRepository.class)
 @Configuration
 public class MongoDBConfig {

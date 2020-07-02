@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.management.Query;
 import javax.management.relation.Role;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,6 +56,8 @@ public class RolesResource {
             _role.setLastName(roleUpdate.getLastName());
             _role.setNicNo(roleUpdate.getNicNo());
             _role.setRoleType(roleUpdate.getRoleType());
+            _role.setCreatedDate(roleUpdate.getCreatedDate());
+            _role.setModifiedDate(new Date());
 
             return new ResponseEntity<>(rolesRepository.save(_role), HttpStatus.OK);
         } else {
@@ -85,7 +88,7 @@ public class RolesResource {
     }
 
     @DeleteMapping("/deleteByNic")
-    public ResponseEntity<HttpStatus> getRoleByNic(String nic){
+    public ResponseEntity<HttpStatus> deleteRoleByNic(String nic){
 
         try {
             rolesRepository.deleteRolesByNicNo(nic,Roles.class);
