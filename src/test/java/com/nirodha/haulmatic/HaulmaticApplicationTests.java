@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import com.nirodha.haulmatic.documents.Roles;
-import org.apache.catalina.Role;
-import org.springframework.util.MultiValueMap;
 import org.testng.annotations.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
