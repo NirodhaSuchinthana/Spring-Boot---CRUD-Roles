@@ -44,7 +44,7 @@ All the code is organized in to folders for easy convenience.
 ![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles.git/tree/master/src/main/resources/readme_content/folder-structure.png)
 
 The document for Role is as follows.
-`public class Roles {
+
  
      public enum RoleType {
          DRIVER,
