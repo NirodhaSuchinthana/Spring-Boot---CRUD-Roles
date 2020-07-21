@@ -63,5 +63,5 @@ The document for Role is as follows.
      
      //and Constructor,getters and setters`
 
-![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles.git/tree/master/src/main/resources/readme_content/swagger-image.png)
+![alt text](https://github.com/NirodhaSuchinthana/Spring-Boot---CRUD-Roles/blob/master/src/main/resources/readme_content/folder-structure.png)
 
